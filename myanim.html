@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rockstory</title>
+    <title>animation effect</title>
 
     <link type="text/css" rel="stylesheet" href="mycss.css">
+
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation: 2s myanim ;
+        animation-iteration-count: infinite;
+    }
+
+
+    @keyframes myanim {
+        0% {background-color: red; left: 0px; top: opx;}
+        25% {background-color: red; left: 100px; top: 0px;}
+        50% {background-color: yellow; left: 200px; top: 0px;}
+        75% {background-color: blue; left: 100px; top: 0px;}
+        100% {background-color: blue; left: 0px; top: 0px;}
+    }
+</style>
+
 </head>
 <body>
     <header>
@@ -31,22 +52,14 @@
 
 
     <section id="main">
-        <article>
-            <h1>락이란?</h1>
-            <p>나락도 락이고, 극락도 락이다.</p>
-        </article>
-        <article>
-            <h1>오아시스란?</h1>
-            <p>오아시스란 내 인생의 한 부분이고, 모든 이들의 소망과 희망이며, 이 세계의 구세주가 될 사람들이고, 
-                이 세상을 구성하는 것에 있어 가장 중요하고 필수적이며 기초적인 근간이 되는 존재이다.</p>
-        </article>
+        <div>
+        
+        </div>
     </section>
 
 
     <footer>
         Copyright (c) 2024  GOAT
     </footer>
-
-
 </body>
 </html>

@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rockstory</title>
+    <title>race</title>
 
     <link type="text/css" rel="stylesheet" href="mycss.css">
+
+    <style>
+        #img1, #img2 {
+            width: 100px;
+            display: block;
+            position: relative;
+            margin: 10px;
+            animation: myanim 5s infinite;
+        }
+        #img1 {animation-timing-function: ease-in;}
+        #img2 {animation-timing-function: ease-out;}
+        @keyframes myanim {
+            from {left: 0px}
+            to {left: 500px}
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,29 +40,20 @@
             <li><a href="myanim2.html">Race</a></li>
         </ul>
         <figure>
-            <img src="oasis2.jpeg" width="150" alt="기타">
+            <img id="oasis" src="oasis2.jpeg" width="150" alt="기타">
             <figcaption>노엘 갤러거</figcaption>
         </figure>
     </nav>
 
 
     <section id="main">
-        <article>
-            <h1>락이란?</h1>
-            <p>나락도 락이고, 극락도 락이다.</p>
-        </article>
-        <article>
-            <h1>오아시스란?</h1>
-            <p>오아시스란 내 인생의 한 부분이고, 모든 이들의 소망과 희망이며, 이 세계의 구세주가 될 사람들이고, 
-                이 세상을 구성하는 것에 있어 가장 중요하고 필수적이며 기초적인 근간이 되는 존재이다.</p>
-        </article>
+        <img id="img2" src="bunny.png"></div>
+        <img id="img1" src="turtle.png"></div>
     </section>
 
 
     <footer>
         Copyright (c) 2024  GOAT
     </footer>
-
-
 </body>
 </html>
