@@ -15,9 +15,8 @@
     }
     section#main {
         background-color: rgb(162, 162, 162);
-        float: right;
+        float: left;
         width: 69.5%;
-        height: 300px;
     }
     nav {
         border: 2px solid white;
@@ -25,7 +24,6 @@
         color: white;
         float: left;
         width: 30%;
-        height: 300px;
     }
     footer {
         background-color: black;
@@ -35,4 +33,11 @@
         margin: 0px 0px 0px 0px;
         font-size: 90%;
         clear: both;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        nav, section {
+            width: 100%;
+        }
     }
