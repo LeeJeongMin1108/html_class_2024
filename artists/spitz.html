@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spitz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, rgb(32, 62, 82), rgb(0, 0, 0));
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            z-index: 1000;
+        }
+        .header img {
+            width: 3%;
+        }
+        .header span a {
+            text-decoration: none;
+            color: white;
+        }
+        .searchcenter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 80%;
+        }
+        .header .search-bar {
+            display: flex;
+            align-items: right;
+            width: 40%;
+        }
+        .header input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        #search {
+            width: 20%;
+            background-color: rgb(91, 171, 224);
+            color: black;
+        }
+        #search:hover {
+            color: white;
+            background-color: rgb(24, 88, 88);
+        }
+
+
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .header span {
+            font-size: 30px;
+            padding-left: 20px;
+        }
+        #menuToggle {
+            display: none;
+        }
+        .menu-icon {
+            padding-left: 20px;
+            align-items: center;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: -200px;
+            width: 200px;
+            height: calc(100% - 0px);
+            background-color: rgb(42, 80, 105);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: 0.4s;
+            z-index: 999;
+        }
+        input[type="submit"] {
+            width: 103%;
+            padding: 5px;
+            background-color: rgb(91, 171, 224);
+        }
+        input[type="submit"]:hover {
+            color: white;
+            background-color: rgb(24, 88, 88);
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        #menuToggle:checked ~ .sidebar {
+            left: 0;
+        }
+        #menuToggle:checked ~ .content {
+            margin-left: 220px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul li a:hover {
+            color: black;
+        }
+
+
+        .content {
+            margin-left: 20px;
+            padding: 80px 20px 20px 20px;
+            transition: margin-left 0.4s;
+        }
+
+
+        .section {
+            margin: 0px 100px;
+            margin-bottom: 40px;
+        }
+        .section table {
+            text-align: center;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+        .list {
+            width: 60%;
+        }
+        .list table td {
+            border-top: 1px solid rgb(78, 102, 122);
+        }
+        .explain {
+            width: 35%;
+        }
+        .explain img {
+            width: 100%;
+            height: 100%;
+        }
+        .explain table {
+            height: 100%;
+            border-collapse: collapse;
+        }
+        .explain tr td {
+            padding: 10px;
+            border: 1px solid rgb(78, 102, 122);
+        }
+        #mainjacket {
+            border: none;
+        }
+
+
+        .contents {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0px;
+        }
+        .contents img {
+            width: 100%;
+            padding: 5px;
+            background-color: white;
+        }
+        .contents div {
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contents img {
+            border-radius: 30px;
+        }
+        .section {
+            color: white;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 0px 0px 0px 0px;
+            font-size: 100%;
+            clear: both;
+            height: 100px;
+        }
+        
+        @media (max-width: 1325px) {
+            .contents { 
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 1024px) {
+            .contents { 
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .list, .explain {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .contents {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menuToggle">
+    <div class="header">
+        <img src="../img/logo.png" alt="LemonTree">
+        <span><a href="../index.html">Abyssism</a></span>
+        <label for="menuToggle" class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <div class="searchcenter">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <input id="search" type="submit" value="검색">
+            </div>
+        </div>
+        <div class="menu">
+        </div>
+    </div>
+    <div class="sidebar">
+        <form>
+            <h2>Login</h2>
+            <input type="text" name="email" placeholder="Email" size="18"><br>
+            <input type="password" name="password" placeholder="Password" size="18"><br>
+            <input type="submit" value="Login">
+        </form>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="https://pentaport.co.kr/" target="_blank">Concert</a></li>
+            <li><a href="#">Random Artist</a></li>
+        </ul><br>
+
+        <h2>Artist</h2>
+        <ul>
+            <li><a href="oasis.html">Oasis</a></li>
+            <li><a href="Hitsujibungaku.html">Hitsujibungaku</a></li>
+            <li><a href="SCANDAL.html">SCANDAL</a></li>
+            <li><a href="spitz.html">Spitz</a></li>
+            <li><a href="#">Sambomaster</a></li>
+            <li><a href="#">ASIAN KUNG-FU GENERATION</a></li>
+            <li><a href="#">Sumika</a></li>
+            <li><a href="#">Frederic</a></li>
+            <li><a href="#">Porno Graffitti</a></li>
+            <li><a href="#">Ryokuoushoku Shakai</a></li>
+            <li><a href="#">SEKAI NO OWARI</a></li>
+            <li><a href="#">RADWIMPS</a></li>
+            <li><a href="#">OFFICIAL HIGE DANDISM</a></li>
+            <li><a href="#">aimyon</a></li>
+            <li><a href="#">King Gnu</a></li>
+            <li><a href="#">Vaundy</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="section container">
+            <div class="list">
+                <table>
+                    <h2>List</h2>
+                    <tbody>
+                        <tr>
+                            <td style="width: 10%;">1.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/beautifulfin.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Beautiful Fin</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">2.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/Hachimitsu.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Robinson</td>
+                            <td style="width: 20%;">SpitzL</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">3.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/indigochiheisen.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Cherry</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">4.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/soranotobikata.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Soramotoberuhazu</td>
+                            <td style="width: 20%;">SpitzL</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">5.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/fakefur.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Kaede</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">6.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/indigochiheisen.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Nagisa</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">7.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/kimigaomodeni.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Kimi ga Omoide ni Naru Mae ni</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">8.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/soranotobikata.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Aoi Kuruma</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">9.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/soranotobikata.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Spider</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%;">10.</td>
+                            <td style="width: 10%;"><img id="jacket" src="../img/cyclehit.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">Scarlet</td>
+                            <td style="width: 20%;">Spitz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="explain">
+                <table>
+                    <h2>Information</h2>
+                    <thead>
+                        <tr>
+                         <th colspan="2">Spitz</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td colspan="2" id="mainjacket" style="width: 20%;"><img src="../img/spitzmain.jpg" width="300" height="300"></td>
+                        </tr>
+                        <tr>
+                        <td colspan="2">정보</td>
+                        </tr>
+                        <tr>
+                        <td>국적</td>
+                        <td>일본</td>
+                        </tr>
+                        <tr>
+                        <td>결성</td>
+                        <td>1987년</td>
+                        </tr>
+                        <tr>
+                        <td>데뷔</td>
+                        <td>1991년</td>
+                        </tr>
+                        <tr>
+                        <td rowspan="4">멤버</td>
+                        <td>쿠사노 마사무네</td>
+                        </tr>
+                        <tr>
+                        <td>미와 테츠야</td>
+                        </tr>
+                        <tr>
+                        <td>타무라 아키히토</td>
+                        </tr>
+                        <tr>
+                        <td>사키야마 타츠오</td>
+                        </tr>
+                        <tr>
+                        <td>장르</td>
+                        <td>얼터너티브 록, 파워 팝, 쟁글 팝</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Album</h2>
+            <div class="contents">
+                <div><img id="jacket" src="../img/kickback.jpg" alt="Image"></div>
+                <div><img id="jacket" src="../img/idol.jpg" alt="Image"></div>
+                <div><img id="jacket" src="../img/newgenesis.jpg" alt="Image"></div>
+                <div><img id="jacket" src="../img/openadoor.jpg" alt="Image"></div>
+                <div><img id="jacket" src="../img/leonine.jpg" alt="Image"></div>
+                <div><img id="jacket" src="../img/inferno.jpg" alt="Image"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <br><br>
+        <p>&copy; 2024 All Rights Reserved.</p>
+    </div>
+</body>
+</html>
