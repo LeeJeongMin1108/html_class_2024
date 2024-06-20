@@ -40,7 +40,7 @@
         }
         .header .search-bar {
             display: flex;
-            align-items: right;
+            align-items: center;
             width: 40%;
         }
         .header input[type="text"] {
@@ -49,6 +49,7 @@
             border-radius: 4px;
             border: none;
         }
+
         #search {
             width: 20%;
             background-color: rgb(91, 171, 224);
@@ -84,12 +85,11 @@
             transition: 0.4s;
         }
 
-
         .sidebar {
             position: fixed;
             top: 60px;
-            left: -200px;
-            width: 200px;
+            left: -250px;
+            width: 250px;
             height: calc(100% - 0px);
             background-color: rgb(42, 80, 105);
             color: white;
@@ -97,9 +97,10 @@
             box-sizing: border-box;
             transition: 0.4s;
             z-index: 999;
+            overflow-y: auto;
         }
         input[type="submit"] {
-            width: 103%;
+            width: 85%;
             padding: 5px;
             background-color: rgb(91, 171, 224);
         }
@@ -107,6 +108,7 @@
             color: white;
             background-color: rgb(24, 88, 88);
         }
+
         .sidebar ul {
             list-style-type: none;
             padding: 0;
@@ -154,6 +156,10 @@
         }
         .list table td {
             border-top: 1px solid rgb(78, 102, 122);
+            font-size: 1vw;
+        }
+        #grade {
+            font-size: 2.5vw;
         }
         .explain {
             width: 35%;
@@ -165,6 +171,7 @@
         .explain table {
             height: 100%;
             border-collapse: collapse;
+            font-size: 1vw;
         }
         .explain tr td {
             padding: 10px;
@@ -214,7 +221,15 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        @media (max-width: 1325px) {
+            input[type="submit"] {
+            width: 78%;
+            }
+        }
         @media (max-width: 1024px) {
+            input[type="submit"] {
+            width: 78%;
+            }
             .contents { 
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -229,6 +244,12 @@
         @media (max-width: 768px) {
             .contents {
                 grid-template-columns: repeat(1, 1fr);
+            }
+            .list { 
+                font-size: 1vw;
+            }
+            #grade {
+                font-size: 2vw;
             }
         }
     </style>
@@ -262,8 +283,8 @@
         <h2>Menu</h2>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="https://pentaport.co.kr/" target="_blank">Concert</a></li>
-            <li><a href="#">Random Artist</a></li>
+            <li><a href="festival.html">Festival</a></li>
+            <li><a href="SCANDAL.html">Random Artist</a></li>
         </ul><br>
 
         <h2>Artist</h2>
@@ -283,7 +304,7 @@
             <li><a href="#">OFFICIAL HIGE DANDISM</a></li>
             <li><a href="#">aimyon</a></li>
             <li><a href="#">King Gnu</a></li>
-            <li><a href="#">Vaundy</a></li>
+            <li><a href="#">Vaundy</a></li><br><br><br>
         </ul>
     </div>
     <div class="content">
@@ -293,61 +314,61 @@
                     <h2>List</h2>
                     <tbody>
                         <tr>
-                            <td style="width: 10%;">1.</td>
+                            <td id="grade" style="width: 10%;">1.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">more than words</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">2.</td>
+                            <td id="grade" style="width: 10%;">2.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/ourhope.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">Hikaru toki</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">3.</td>
+                            <td id="grade" style="width: 10%;">3.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/1999.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">1999</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">4.</td>
+                            <td id="grade" style="width: 10%;">4.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/youlove.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">Mayoiga</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">5.</td>
+                            <td id="grade" style="width: 10%;">5.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">Addiction</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">6.</td>
+                            <td id="grade" style="width: 10%;">6.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/powers.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">Aimai de iiyo</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">7.</td>
+                            <td id="grade" style="width: 10%;">7.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">GO!!!</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">8.</td>
+                            <td id="grade" style="width: 10%;">8.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/ourhope.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">OOPARTS</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">9.</td>
+                            <td id="grade" style="width: 10%;">9.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">FOOL</td>
                             <td style="width: 20%;">Hitsujibungaku</td>
                         </tr>
                         <tr>
-                            <td style="width: 10%;">10.</td>
+                            <td id="grade" style="width: 10%;">10.</td>
                             <td style="width: 10%;"><img id="jacket" src="../img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
                             <td style="width: 60%;">Elen no Blue</td>
                             <td style="width: 20%;">Hitsujibungaku</td>

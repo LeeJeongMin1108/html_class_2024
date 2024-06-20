@@ -181,7 +181,7 @@
 
         .contents {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 0px;
         }
         .contents img {
@@ -196,9 +196,7 @@
             justify-content: center;
             align-items: center;
         }
-        .contents img {
-            border-radius: 30px;
-        }
+        
         .footer {
             background-color: black;
             color: white;
@@ -229,6 +227,11 @@
         width: 78%;
         }
     }
+    @media (max-width: 1185px) {
+        .contents {
+            grid-template-columns: repeat(3, 1fr);}
+        }
+    
 
     @media (max-width: 768px) {
         .content {
@@ -236,7 +239,7 @@
         padding: 80px 5px 5px 5px;
         }
         .contents {
-            grid-template-columns: repeat(1, 1fr);}
+            grid-template-columns: repeat(2, 1fr);}
         }
         .section table td {
             font-size: 1vw;
@@ -247,7 +250,7 @@
 
     @media (max-width: 525px) {
         #chart {
-            font-size: 2vw;
+            font-size: 3vw;
         }
         .content {
         margin-left: 0;
@@ -258,6 +261,9 @@
         }
         .content {
             margin: 0 0;
+        }
+        .contents {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
     </style>
@@ -318,91 +324,80 @@
     </div>
     <div class="content">
         <div class="section">
-            <a href="https://pentaport.co.kr/" target="_blank"><img src="img/festival.png" class="adv"></a>
-            <table>
-                <h2 id="chart">Today's Chart</h2>
-                <tbody>
-                    <tr>
-                        <td id="grade" style="width: 10%;">1.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">I Hope, I Think, I Know</td>
-                        <td style="width: 20%;">Oasis</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">2.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/kimigaomodeni.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Kimi ga Omoide ni Naru Mae ni</td>
-                        <td style="width: 20%;">Spitz</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">3.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/morethanwords.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">more than words</td>
-                        <td style="width: 20%;">Hitsujibungaku</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">4.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/sol-fa.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Rewrite (2016 Rerecorded)</td>
-                        <td style="width: 20%;">ASIAN KUNG-FU GENERATION</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">5.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/pretender.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Pretender</td>
-                        <td style="width: 20%;">OFFICIAL HIGE DANDISM</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">6.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/actor.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Landscape</td>
-                        <td style="width: 20%;">Ryokuoushoku Shakai</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">7.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/shukan.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Shunkan Sentimental</td>
-                        <td style="width: 20%;">SCANDAL</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">8.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/kimitohitsuji.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Kimi to Hitsuji to Ao</td>
-                        <td style="width: 20%;">Radwimps</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">9.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/white.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">White Light</td>
-                        <td style="width: 20%;">Superfly</td>
-                    </tr>
-                    <tr>
-                        <td id="grade" style="width: 10%;">10.</td>
-                        <td style="width: 10%;"><img id="jacket" src="img/tree.jpg" alt="Image" style="width: 100%;"></td>
-                        <td style="width: 60%;">Dragon Night</td>
-                        <td style="width: 20%;">SEKAI NO OWARI</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h2 id="chart">Festival</h2>
         </div>
         <div class="section contents">
             <div>
-                <img src="img/morning_glory.jpg" width="200px">
+                <img src="festivalimg/1.png" width="200px">
             </div>
             <div>
-                <img src="img/thegreatest.jpg" width="200px">
+                <img src="festivalimg/2.png" width="200px">
             </div>
             <div>
-                <img src="img/beautifulfin.jpg" width="200px">
+                <img src="festivalimg/3.png" width="200px">
             </div>
             <div>
-                <img src="img/kissesandkills.jpg" width="200px">
+                <img src="festivalimg/4.png" width="200px">
             </div>
             <div>
-                <img src="img/frederhythm.jpg" width="200px">
+                <img src="festivalimg/5.png" width="200px">
             </div>
             <div>
-                <img src="img/honey.jpg" width="200px">
+                <img src="festivalimg/6.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/7.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/8.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/9.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/10.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/11.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/12.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/13.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/14.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/15.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/16.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/17.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/18.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/19.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/20.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/21.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/22.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/23.png" width="200px">
+            </div>
+            <div>
+                <img src="festivalimg/24.png" width="200px">
             </div>
         </div>
     </div>

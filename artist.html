@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCANDAL</title>
+    <title>ArtistPage</title>
     <style>
         body {
             margin: 0;
@@ -25,23 +25,18 @@
             z-index: 1000;
         }
         .header img {
-            width: 3%;
-        }
-        .header span a {
-            text-decoration: none;
-            color: white;
+            height: 40px;
         }
         .searchcenter {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto;
-            width: 80%;
         }
         .header .search-bar {
             display: flex;
             align-items: center;
-            width: 40%;
+            width: 50%;
         }
         .header input[type="text"] {
             width: 100%;
@@ -49,7 +44,6 @@
             border-radius: 4px;
             border: none;
         }
-
         #search {
             width: 20%;
             background-color: rgb(91, 171, 224);
@@ -65,15 +59,10 @@
             display: flex;
             gap: 20px;
         }
-        .header span {
-            font-size: 30px;
-            padding-left: 20px;
-        }
         #menuToggle {
             display: none;
         }
         .menu-icon {
-            padding-left: 20px;
             align-items: center;
             cursor: pointer;
         }
@@ -85,11 +74,12 @@
             transition: 0.4s;
         }
 
+
         .sidebar {
             position: fixed;
             top: 60px;
-            left: -250px;
-            width: 250px;
+            left: -200px;
+            width: 200px;
             height: calc(100% - 0px);
             background-color: rgb(42, 80, 105);
             color: white;
@@ -97,10 +87,9 @@
             box-sizing: border-box;
             transition: 0.4s;
             z-index: 999;
-            overflow-y: auto;
         }
         input[type="submit"] {
-            width: 85%;
+            width: 103%;
             padding: 5px;
             background-color: rgb(91, 171, 224);
         }
@@ -108,7 +97,6 @@
             color: white;
             background-color: rgb(24, 88, 88);
         }
-
         .sidebar ul {
             list-style-type: none;
             padding: 0;
@@ -154,28 +142,15 @@
         .list {
             width: 60%;
         }
-        .list table td {
-            border-top: 1px solid rgb(78, 102, 122);
-            font-size: 1vw;
-        }
-        #grade {
-            font-size: 2.5vw;
-        }
         .explain {
             width: 35%;
         }
-        .explain img {
-            width: 100%;
-            height: 100%;
-        }
         .explain table {
-            height: 100%;
             border-collapse: collapse;
-            font-size: 1vw;
         }
         .explain tr td {
             padding: 10px;
-            border: 1px solid rgb(78, 102, 122);
+            border: 1px solid white;
         }
         #mainjacket {
             border: none;
@@ -221,15 +196,7 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-        @media (max-width: 1325px) {
-            input[type="submit"] {
-            width: 78%;
-            }
-        }
         @media (max-width: 1024px) {
-            input[type="submit"] {
-            width: 78%;
-            }
             .contents { 
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -245,26 +212,19 @@
             .contents {
                 grid-template-columns: repeat(1, 1fr);
             }
-            .list { 
-                font-size: 1vw;
-            }
-            #grade {
-                font-size: 2vw;
-            }
         }
     </style>
 </head>
 <body>
     <input type="checkbox" id="menuToggle">
     <div class="header">
-        <img src="../img/logo.png" alt="LemonTree">
-        <span><a href="../index.html">Abyssism</a></span>
-        <label for="menuToggle" class="menu-icon">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
+        <img src="logo.png" alt="LemonTree">
         <div class="searchcenter">
+            <label for="menuToggle" class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <input id="search" type="submit" value="검색">
@@ -282,18 +242,18 @@
         </form>
         <h2>Menu</h2>
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="festival.html">Festival</a></li>
-            <li><a href="oasis.html">Random Artist</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Concert</a></li>
+            <li><a href="#">Random Artist</a></li>
         </ul><br>
 
         <h2>Artist</h2>
         <ul>
-            <li><a href="oasis.html">Oasis</a></li>
-            <li><a href="Hitsujibungaku.html">Hitsujibungaku</a></li>
-            <li><a href="SCANDAL.html">SCANDAL</a></li>
-            <li><a href="spitz.html">Spitz</a></li>
-            <li><a href="#">Sambomaster</a></li>
+            <li><a href="#">Oasis</a></li>
+            <li><a href="#">Hitsujibungaku</a></li>
+            <li><a href="#">SCANDAL</a></li>
+            <li><a href="#">Spitz</a></li>
+            <li><a href="#">One OK Rock</a></li>
             <li><a href="#">ASIAN KUNG-FU GENERATION</a></li>
             <li><a href="#">Sumika</a></li>
             <li><a href="#">Frederic</a></li>
@@ -304,7 +264,8 @@
             <li><a href="#">OFFICIAL HIGE DANDISM</a></li>
             <li><a href="#">aimyon</a></li>
             <li><a href="#">King Gnu</a></li>
-            <li><a href="#">Vaundy</a></li><br><br><br>
+            <li><a href="#">Vaundy</a></li>
+            <li><a href="#">Kenshi Yonezu</a></li>
         </ul>
     </div>
     <div class="content">
@@ -314,64 +275,52 @@
                     <h2>List</h2>
                     <tbody>
                         <tr>
-                            <td id="grade" style="width: 10%;">1.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/shukan.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Shunkan Sentimental</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">1.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">2.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/jounetsu.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Shoujyo S</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">2.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">3.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/Queensare.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Harukaze</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">3.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">4.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/luminos.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Fanfare</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">4.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">5.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/kissfromthedarkness.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">A.M.D.K.J.</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">5.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">6.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/helloworld.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Departure</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">6.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">7.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/luminos.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Hairaito no naka de bokura zutto</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">7.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                         <tr>
-                            <td id="grade" style="width: 10%;">8.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/awanaitsumorino.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Awanaitsumorino Genkidene</td>
-                            <td style="width: 20%;">SCANDAL</td>
-                        </tr>
-                        <tr>
-                            <td id="grade" style="width: 10%;">9.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/helloworld.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Yoake No Ryuseigun</td>
-                            <td style="width: 20%;">SCANDAL</td>
-                        </tr>
-                        <tr>
-                            <td id="grade" style="width: 10%;">10.</td>
-                            <td style="width: 10%;"><img id="jacket" src="../img/luminos.jpg" alt="Image" style="width: 100%;"></td>
-                            <td style="width: 60%;">Line of sight</td>
-                            <td style="width: 20%;">SCANDAL</td>
+                            <td style="width: 10%;">7.</td>
+                            <td style="width: 10%;"><img id="jacket" src="img/beherenow.jpg" alt="Image" style="width: 100%;"></td>
+                            <td style="width: 60%;">오마이갓</td>
+                            <td style="width: 20%;">뉴진스</td>
                         </tr>
                     </tbody>
                 </table>
@@ -381,47 +330,47 @@
                     <h2>Information</h2>
                     <thead>
                         <tr>
-                         <th colspan="2">SCANDAL</th>
+                         <th colspan="2">오아시스</th>
                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td colspan="2" id="mainjacket" style="width: 20%;"><img src="../img/scandalmain.jpg" width="300" height="300"></td>
+                        <td colspan="2" id="mainjacket"><img src="" width="300" height="300"></td>
                         </tr>
                         <tr>
                         <td colspan="2">정보</td>
                         </tr>
                         <tr>
                         <td>국적</td>
-                        <td>일본</td>
+                        <td>123</td>
                         </tr>
                         <tr>
                         <td rowspan="2">결성</td>
-                        <td>2006년 8월 21일</td>
+                        <td>123</td>
                         </tr>
                         <tr>
-                        <td>일본 오사카부 오사카시 미야코지마구 쿄바시</td>
+                        <td>123</td>
                         </tr>
                         <tr>
                         <td>데뷔</td>
-                        <td>2008년 10월 22일</td>
+                        <td>1111</td>
                         </tr>
                         <tr>
                         <td rowspan="4">멤버</td>
-                        <td>HARUNA</td>
+                        <td>d</td>
                         </tr>
                         <tr>
-                        <td>MAMI</td>
+                        <td>d</td>
                         </tr>
                         <tr>
-                        <td>TOMOMI</td>
+                        <td>d</td>
                         </tr>
                         <tr>
-                        <td>RINA</td>
+                        <td>d</td>
                         </tr>
                         <tr>
                         <td>장르</td>
-                        <td>팝 록, 개러지 록, J-ROCK, J-POP</td>
+                        <td>d</td>
                         </tr>
                     </tbody>
                 </table>
@@ -430,17 +379,16 @@
         <div class="section">
             <h2>Album</h2>
             <div class="contents">
-                <div><img id="jacket" src="../img/kickback.jpg" alt="Image"></div>
-                <div><img id="jacket" src="../img/idol.jpg" alt="Image"></div>
-                <div><img id="jacket" src="../img/newgenesis.jpg" alt="Image"></div>
-                <div><img id="jacket" src="../img/openadoor.jpg" alt="Image"></div>
-                <div><img id="jacket" src="../img/leonine.jpg" alt="Image"></div>
-                <div><img id="jacket" src="../img/inferno.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/kickback.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/idol.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/newgenesis.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/openadoor.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/leonine.jpg" alt="Image"></div>
+                <div><img id="jacket" src="img/inferno.jpg" alt="Image"></div>
             </div>
         </div>
     </div>
     <div class="footer">
-        <br><br>
         <p>&copy; 2024 All Rights Reserved.</p>
     </div>
 </body>
